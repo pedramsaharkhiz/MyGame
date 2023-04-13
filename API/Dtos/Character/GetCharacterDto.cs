@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using API.Dtos.Skill;
+using API.Dtos.Weapon;
 using API.Models;
 
 namespace API.Dtos.Character
@@ -11,6 +14,8 @@ namespace API.Dtos.Character
         public int Defense { get; set; }=10;   
         public int Intelligence { get; set; }=10;  
         public RpgClass Class=RpgClass.Knight;
+        public GetWeaponDto Weapon { get; set; }
+        public List<GetSkillDto> Skills { get; set; }
             
     }
 }

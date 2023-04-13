@@ -22,7 +22,6 @@ namespace API.Controllers
         {
             _characterService = characterService;
         }
-        [AllowAnonymous]
         [HttpGet("GetAll")]
         public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> GetAll()
         {
@@ -57,6 +56,11 @@ namespace API.Controllers
                 return NotFound(response.Message);
             }
             return Ok(response);
+        }
+        [HttpPost("Skill")]
+        public async Task<ActionResult<ServiceResponse<GetCharacterDto>>>AddCharacterSkill(AddCharacterSkillDto newCharacterSkill)
+        {
+            return Ok(await _characterService.AddCharacterSkill(newCharacterSkill));
         }
     }
 }
